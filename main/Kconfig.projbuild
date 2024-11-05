@@ -1,0 +1,23 @@
+menu "parking solution"
+
+config SPACE_OPEN
+    bool "Parking Open ?" 
+    default n
+    help
+        This option enables or disables the custom feature in the project.
+
+config MAX_CAR
+    int "Set max parking space"
+    depends on SPACE_OPEN
+    default 10
+    range 1 20
+    help
+        Set the debug level for the custom feature. Valid range is from 1 to 5.
+
+config MY_MESSAGE
+    string "Write a message to users"
+    default "Hello ESP-IDF"
+    help
+        Custom string used by the project.
+
+endmenu
